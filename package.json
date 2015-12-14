@@ -1,0 +1,44 @@
+{
+  "name": "ng-webpack-seed",
+  "version": "1.0.0",
+  "description": "Angular 1.x Typescript Webpack Seed.",
+  "main": "",
+  "scripts": {
+    "clean": "rimraf node_modules doc && npm cache clean",
+    "clean-install": "npm run clean && npm install",
+    "clean-start": "npm run clean && npm start",
+    "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
+    "build": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "server": "webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
+    "lint": "tsconfig . && tsconfig-lint",
+    "docs": "typedoc  --options typedoc.json  app/**/*.ts",
+    "start": "npm run server"
+  },
+  "author": "Drew Ballance <dballance@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4.8",
+    "core-js": "1.2.6",
+    "jquery": "^2.1.4",
+    "reflect-metadata": "0.1.2"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.0",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.7.1",
+    "file-loader": "^0.8.5",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.7.2",
+    "tsconfig-glob": "^0.3.2",
+    "tsconfig-lint": "^0.2.0",
+    "tsd": "^0.6.5",
+    "typedoc": "^0.3.12",
+    "typescript": "^1.7.3",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}

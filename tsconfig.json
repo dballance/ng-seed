@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true
+    },
+    "filesGlob": [
+        "./app/**/*.ts",
+        "!./app/**/*.spec.ts"
+    ],
+    "files": [
+        "./typings/tsd.d.ts",
+        "./app/app.ts",
+        "./app/feature/feature.module.ts",
+        "./app/feature/feature.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": false
+}
