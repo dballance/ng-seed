@@ -1,0 +1,6 @@
+{
+  "ambientDependencies": {
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#8ea42cd8bb11863ed6f242d67c502288ebc45a7b",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+  }
+}

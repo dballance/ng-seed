@@ -12,7 +12,7 @@
         "!./app/**/*.spec.ts"
     ],
     "files": [
-        "./typings/tsd.d.ts",
+        "./typings/browser.d.ts",
         "./app/app.ts",
         "./app/feature/feature.module.ts",
         "./app/feature/feature.ts"
