@@ -8,14 +8,15 @@
         "sourceMap": true
     },
     "filesGlob": [
-        "./app/**/*.ts",
-        "!./app/**/*.spec.ts"
+        "typings/tsd.d.ts",
+        "app/**/*.ts"
     ],
     "files": [
-        "./typings/browser.d.ts",
-        "./app/app.ts",
-        "./app/feature/feature.module.ts",
-        "./app/feature/feature.ts"
+        "typings/tsd.d.ts",
+        "app/app.ts",
+        "app/feature/feature.module.ts",
+        "app/feature/feature.spec.ts",
+        "app/feature/feature.ts"
     ],
     "exclude": [
         "node_modules"
