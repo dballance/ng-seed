@@ -1,9 +1,0 @@
-{
-  "ambientDependencies": {
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#8ea42cd8bb11863ed6f242d67c502288ebc45a7b",
-    "angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts"
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#8ea42cd8bb11863ed6f242d67c502288ebc45a7b",
-    "jasmine": "github:angular/DefinitelyTyped/jasmine/jasmine.d.ts#31e7317c9a0793857109236ef7c7f223305a8aa9",
-    "node": "github:angular/DefinitelyTyped/node/node.d.ts#31e7317c9a0793857109236ef7c7f223305a8aa9"
-  }
-}

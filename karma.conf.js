@@ -11,12 +11,21 @@ module.exports = function (config) {
 		exclude: [
 
 		],
+		plugins: [
+			require("karma-jasmine"),
+			require("karma-coverage"),
+			require("karma-chrome-launcher"),
+			require("karma-sourcemap-loader"),
+			require("karma-webpack")	
+		],
 		preprocessors: {
-			'karma.tests.js': ['webpack', 'sourcemap']
+			'karma.tests.js': ['webpack', 'sourcemap'],
+			'app/**/*.ts': ['coverage']
 		},
 		reporters: ["dots", "coverage"],
 		coverageReporter: {
 			reporters: [
+				{ type: 'json'},
 				{ type: 'html' }
 			]
 		},
@@ -29,30 +38,33 @@ module.exports = function (config) {
 		webpack: {
 			resolve: {
 				cache: false,
-				root: path.join(__dirname, 'node_modules'),
+				root: __dirname,
 				extensions: ['','.ts','.js','.json', '.css', '.html'],
-				modulesDirectories: ["node_modules"],
-				alias: {
-					"app": "app"
-				}
+				//modulesDirectories: ["app", "node_modules"]
 			},
 			devtool: 'inline-source-map',
 			module: {
 				loaders: [
 					// Support for *.json files.
-					{ test: /\.json$/, loader: 'json-loader' },
+					{ test: /\.json$/, loader: 'json' },
 					// Support for CSS as raw text
-					{ test: /\.css$/, loader: 'raw-loader' },
+					{ test: /\.css$/, loader: 'raw' },
 
 					// support for .html as raw text
-					{ test: /\.html$/, loader: 'raw-loader' },
+					{ test: /\.html$/, loader: 'raw' },
 
 					// Support for .ts files.
 					{
 						test: /\.ts$/,
-						loader: 'ts-loader',
-						query: { 'ignoreDiagnostics': [2403] }, // 2403 -> Subsequent variable declarations
-						exclude: [/\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/]
+						loader: 'ts',
+						query: {  
+							'ignoreDiagnostics': [
+                				2403, // 2403 -> Subsequent variable declarations
+                				2300, // 2300 Duplicate identifier
+                				2374, // 2374 -> Duplicate number index signature
+                				2375  // 2375 -> Duplicate string index signature
+              			]},
+						exclude: [/\.e2e\.ts$/, /node_modules/]
 					}
 				],
 				postLoaders: [
@@ -60,7 +72,7 @@ module.exports = function (config) {
 						test: /\.ts$/,
 						exclude: [
 							/node_modules\//,
-							/\.spec.js$/
+							/\.spec.ts$/
 						],
 						loader: 'istanbul-instrumenter'
 					}
@@ -69,9 +81,9 @@ module.exports = function (config) {
 			stats: { colors: true, reasons: true },
 			debug: false,
 		},
-		webpackServer: {
-			noInfo: true //please don't spam the console when running in karma!
-		},
+		// webpackServer: {
+		// 	noInfo: true //please don't spam the console when running in karma!
+		// },
 		noResolve: false
 	})
 }

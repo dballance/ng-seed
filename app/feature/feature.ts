@@ -1,4 +1,20 @@
 
+export interface IFeatureDirectiveController {
+	
+}
+
+export class FeatureDirectiveController implements IFeatureDirectiveController {
+	
+	constructor(){
+		console.log("yaya");
+	}
+	
+	do(): string {
+		return "something";
+	}
+}
+
+
 export interface IFeatureDirective extends ng.IDirective {
 	
 }
@@ -10,7 +26,9 @@ export class FeatureDirective implements IFeatureDirective {
 	}
 	
 	restrict: string = "E";
+	controller: IFeatureDirectiveController = FeatureDirectiveController;
 	template: string = `
 		<h1> Feature Directive </h1>
 	`;
 }
+
