@@ -54,3 +54,4 @@ dist
 lib
 typings
 doc
+npm-debug.log

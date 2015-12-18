@@ -14,6 +14,7 @@
     "files": [
         "typings/tsd.d.ts",
         "app/app.ts",
+        "app/feature/another.feature.ts",
         "app/feature/feature.module.ts",
         "app/feature/feature.spec.ts",
         "app/feature/feature.ts"

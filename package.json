@@ -9,7 +9,7 @@
     "clean-start": "npm run clean && npm start",
     "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
-    "server": "webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
+    "server": "tsconfig && webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
     "lint": "tsconfig . && tsconfig-lint",
     "docs": "typedoc  --options typedoc.json  app/**/*.ts",
     "start": "npm run server",

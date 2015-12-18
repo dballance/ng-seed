@@ -7,9 +7,12 @@ export class FeatureDirectiveController implements IFeatureDirectiveController {
 	
 	constructor(){
 		console.log("yaya");
+		this.do();
 	}
 	
 	do(): string {
+		const value = Object.assign({}, {test: "value"}, {another: "value"});
+		console.log(value);
 		return "something";
 	}
 }
