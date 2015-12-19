@@ -8,16 +8,20 @@
         "sourceMap": true
     },
     "filesGlob": [
-        "typings/tsd.d.ts",
         "app/**/*.ts"
     ],
     "files": [
-        "typings/tsd.d.ts",
+        "app/typings/tsd.d.ts",
+        "app/typings/angularjs/angular-mocks.d.ts",
+        "app/typings/angularjs/angular.d.ts",
+        "app/typings/core-js/core-js.d.ts",
+        "app/typings/jasmine/jasmine.d.ts",
+        "app/typings/jquery/jquery.d.ts",
         "app/app.ts",
-        "app/feature/another.feature.ts",
         "app/feature/feature.module.ts",
         "app/feature/feature.spec.ts",
-        "app/feature/feature.ts"
+        "app/feature/feature.ts",
+        "app/feature/index.ts"
     ],
     "exclude": [
         "node_modules"

@@ -11,7 +11,7 @@
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "server": "tsconfig && webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
     "lint": "tsconfig . && tsconfig-lint",
-    "docs": "typedoc  --options typedoc.json  app/**/*.ts",
+    "docs": "typedoc  --options typedoc.json --exclude **/*.spec.ts app ",
     "start": "npm run server",
     "test": "karma start"
   },
