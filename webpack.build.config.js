@@ -1,16 +1,12 @@
 var path = require("path");
 var webpack = require("webpack");
-var Clean = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var Clean = require('clean-webpack-plugin');
 
 var distPaths = {
     scripts: "js/",
     images: "img/"
 }
-
-
 
 //Config
 module.exports = {
@@ -34,9 +30,7 @@ module.exports = {
 	
 	output: {
      path: path.join( __dirname,  "dist"),
-     filename:  distPaths.scripts + "[name].js",
-     sourceMapFilename: distPaths.scripts+ "[name].js.map",
-     chunkFilename: distPaths.scripts + "[id].chunk.js"
+     filename:  distPaths.scripts + "[name]-[hash].min.js",
    },
 
   resolve: {
@@ -67,11 +61,11 @@ module.exports = {
   },
   
   plugins: [
-    // new CommonsChunkPlugin({ name: 'vendor', filename: distPaths.scripts + 'vendor.js' }),
-    // new CommonsChunkPlugin({ name: 'common',   filename: distPaths.scripts + 'common.js' }),
-    //new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.NoErrorsPlugin(),
-   // new Clean(['dist']),
+    new Clean(['dist']),
     new HtmlWebpackPlugin({
       title: 'Angular 1.x Typescript Webpack Seed',
       template: 'index.html',

@@ -8,7 +8,7 @@
     "clean-install": "npm run clean && npm install",
     "clean-start": "npm run clean && npm start",
     "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
-    "build": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "build": "webpack --config ./webpack.build.config.js --progress --profile --colors --display-error-details --display-cached",
     "server": "tsconfig && webpack-dev-server --progress --profile --colors --display-error-details --display-cached --port 3000",
     "lint": "tsconfig . && tsconfig-lint",
     "docs": "typedoc  --options typedoc.json --exclude **/*.spec.ts --external app ",
