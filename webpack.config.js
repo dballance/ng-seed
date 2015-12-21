@@ -1,6 +1,5 @@
 var path = require("path");
 var webpack = require("webpack");
-var Clean = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
@@ -9,8 +8,6 @@ var distPaths = {
     scripts: "js/",
     images: "img/"
 }
-
-
 
 //Config
 module.exports = {
@@ -67,11 +64,7 @@ module.exports = {
   },
   
   plugins: [
-    // new CommonsChunkPlugin({ name: 'vendor', filename: distPaths.scripts + 'vendor.js' }),
-    // new CommonsChunkPlugin({ name: 'common',   filename: distPaths.scripts + 'common.js' }),
-    //new webpack.optimize.UglifyJsPlugin(),
     new webpack.NoErrorsPlugin(),
-   // new Clean(['dist']),
     new HtmlWebpackPlugin({
       title: 'Angular 1.x Typescript Webpack Seed',
       template: 'index.html',
