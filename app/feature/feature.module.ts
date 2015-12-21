@@ -1,4 +1,3 @@
-import * as angular from "angular";
 import { FeatureDirective } from "./feature";
 
 /** The name of the angular module. */

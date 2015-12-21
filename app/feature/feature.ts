@@ -1,4 +1,6 @@
-	export interface IFeatureDirectiveController {
+declare var require: any;	
+    
+    export interface IFeatureDirectiveController {
 
 	}
 
@@ -23,7 +25,5 @@
 
 		restrict: string = "E";
 		controller: IFeatureDirectiveController = FeatureDirectiveController;
-		template: string = `
-		<h1> Feature Directive </h1>
-		`;
+		template: string = require("./feature.tpl.html");
 	}
